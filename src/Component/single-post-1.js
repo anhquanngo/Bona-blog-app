@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-export default class single_post_1 extends Component {
+class single_post_1 extends Component {
     render() {
         return (
             <div>
@@ -46,9 +47,9 @@ export default class single_post_1 extends Component {
                                         </div>{/* blog-post-inner */}
                                         <div className="post-icons-area">
                                             <ul className="post-icons">
-                                                <li><a href="#"><i className="ion-heart" />57</a></li>
-                                                <li><a href="#"><i className="ion-chatbubble" />6</a></li>
-                                                <li><a href="#"><i className="ion-eye" />138</a></li>
+                                                <li><a href="#"><i className="ion-heart" />{this.props.ion_heart}</a></li>
+                                                <li><a href="#"><i className="ion-chatbubble" />{this.props.ion_chatbubble}</a></li>
+                                                <li><a href="#"><i className="ion-eye" />{this.props.ion_view}</a></li>
                                             </ul>
                                             <ul className="icons">
                                                 <li>SHARE : </li>
@@ -250,3 +251,11 @@ export default class single_post_1 extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    ion_heart: state.ion_heart,
+    ion_chatbubble: state.ion_chatbubble,
+    ion_view: state.ion_view
+})
+
+export default connect(mapStateToProps)(single_post_1)

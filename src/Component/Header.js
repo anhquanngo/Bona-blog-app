@@ -6,7 +6,7 @@ export default class Header extends Component {
         return (
             <header>
                 <div className="container-fluid position-relative no-side-padding">
-                    <a href="#" className="logo"><img src="images/logo.png" alt="Logo Image" /></a>
+                    <Link to="" className="logo"><img src="images/logo.png" alt="Logo Image" /></Link>
                     <div className="menu-nav-icon" data-nav-menu="#main-menu"><i className="ion-navicon" /></div>
                     <ul className="main-menu visible-on-click" id="main-menu">
                         <li><Link to="">Home</Link></li>
